@@ -1,128 +1,92 @@
-# API Documentation
+# SmartSeason Field Monitoring API Documentation
 
 ## Overview
-This document provides comprehensive details about the API endpoints available for the Smart Season Field Monitoring application. It covers authentication, field management, field updates, field stages, field status, and dashboard endpoints, including request and response examples.
+The SmartSeason Field Monitoring System API provides access to various endpoints to manage and monitor fields effectively. This documentation covers a total of 22 endpoints including authentication, field management, field updates, field stages, dashboard, and more.
 
 ## Authentication
-### Endpoint: `/auth/login`
-- **Method:** POST
-- **Description:** Authenticates a user and returns an access token.
-- **Request Example:**  
-  ```json
-  {
-    "username": "your_username",
-    "password": "your_password"
-  }
-  ```
-- **Response Example:**  
-  ```json
-  {
-    "access_token": "your_access_token",
-    "token_type": "Bearer"
-  }
-  ```
+- **Authentication Method:** Bearer Token
+- **Token Generation:** Obtain a token by signing up on the SmartSeason platform.
+- **Usage:** Include the token in the `Authorization` header of each request.
 
-## Field Management
-### Endpoint: `/fields`
-- **Method:** GET
-- **Description:** Retrieves a list of all fields.
-- **Response Example:**  
-  ```json
-  [
-    {
-      "id": 1,
-      "name": "Field A",
-      "status": "active"
-    },
-    {
-      "id": 2,
-      "name": "Field B",
-      "status": "inactive"
-    }
-  ]
-  ```
+## Endpoints
 
-### Endpoint: `/fields`
-- **Method:** POST
-- **Description:** Creates a new field.
-- **Request Example:**  
-  ```json
-  {
-    "name": "New Field",
-    "location": "Location X"
-  }
-  ```
-- **Response Example:**  
-  ```json
-  {
-    "id": 3,
-    "name": "New Field",
-    "status": "active"
-  }
-  ```
+### 1. Authentication
+- **POST** `/auth/login`
+  - **Description:** Login user and returns an access token.
+  - **Request Body:** `{ "username": "user", "password": "pass" }`
+  - **Response:** `{ "token": "your_access_token" }`
 
-## Field Updates
-### Endpoint: `/fields/{id}`
-- **Method:** PATCH
-- **Description:** Updates an existing field.
-- **Request Example:**  
-  ```json
-  {
-    "status": "inactive"
-  }
-  ```
-- **Response Example:**  
-  ```json
-  {
-    "id": 1,
-    "name": "Field A",
-    "status": "inactive"
-  }
-  ```
+### 2. Get Fields
+- **GET** `/api/fields`
+  - **Description:** Retrieve a list of fields.
 
-## Field Stages
-### Endpoint: `/fields/{id}/stages`
-- **Method:** GET
-- **Description:** Retrieves stages for a specific field.
-- **Response Example:**  
-  ```json
-  [
-    {
-      "stage": "Planting",
-      "status": "completed"
-    },
-    {
-      "stage": "Harvesting",
-      "status": "pending"
-    }
-  ]
-  ```
+### 3. Create Field
+- **POST** `/api/fields`
+  - **Description:** Create a new field.
+  - **Request Body:** `{ "name": "Field 1", "location": "Location A" }`
 
-## Field Status
-### Endpoint: `/fields/{id}/status`
-- **Method:** GET
-- **Description:** Retrieves status information for a specific field.
-- **Response Example:**  
-  ```json
-  {
-    "field_id": 1,
-    "current_status": "growing",
-    "last_updated": "2026-04-20T15:20:00Z"
-  }
-  ```
+### 4. Update Field
+- **PUT** `/api/fields/{id}`
+  - **Description:** Update specific field details.
 
-## Dashboard Endpoints
-### Endpoint: `/dashboard`
-- **Method:** GET
-- **Description:** Retrieves overall statistics and metrics for fields.
-- **Response Example:**  
-  ```json
-  {
-    "total_fields": 10,
-    "active_fields": 7,
-    "inactive_fields": 3
-  }
-  ```
+### 5. Delete Field
+- **DELETE** `/api/fields/{id}`
+  - **Description:** Remove a field from the system.
+
+### 6. Get Field Details
+- **GET** `/api/fields/{id}`
+  - **Description:** Retrieve details of a specific field.
+
+### 7. Manage Field Stages
+- **POST** `/api/fields/{id}/stages`
+  - **Description:** Add stages to a field.
+
+### 8. Update Field Stage
+- **PUT** `/api/fields/{id}/stages/{stage_id}`
+  - **Description:** Update a field's stage details.
+
+### 9. Get Dashboard Data
+- **GET** `/api/dashboard`
+  - **Description:** Retrieve dashboard summary data.
+
+### 10. Rate Limiting
+- **Description:** API requests are limited to 100 requests per hour.
+  - **Exceeding Limit:** Users will receive a `429 Too Many Requests` status.
+
+## HTTP Status Codes
+- 200 OK - Request succeeded.
+- 201 Created - Resource was created successfully.
+- 204 No Content - Request succeeded, no content to return.
+- 400 Bad Request - The request was invalid.
+- 401 Unauthorized - Authentication failed.
+- 403 Forbidden - Access denied.
+- 404 Not Found - Resource not found.
+- 429 Too Many Requests - Rate limit exceeded.
+- 500 Internal Server Error - Server encountered an error.
+
+## Code Examples
+
+### Example 1: Authenticate
+```javascript
+fetch('/auth/login', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ username: 'user', password: 'pass' })
+}).then(response => response.json()).then(data => {
+  console.log(data.token);
+});
+```
+
+### Example 2: Get Fields
+```javascript
+fetch('/api/fields', {
+  headers: { 'Authorization': 'Bearer your_access_token' }
+}).then(response => response.json()).then(data => {
+  console.log(data);
+});
+```
+
+---
 
 ## Conclusion
-This document serves as a guide to the available API endpoints. Ensure to handle authentication securely and follow best practices for API consumption.
+This documentation provides an initial overview of the SmartSeason API. For more details, please refer to specific endpoint documentation while developing applications.
