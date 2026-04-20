@@ -344,7 +344,7 @@ Coding Standards
 
 📧 Contact & Support
 - **Issues:** [GitHub Issues](https://github.com/Elphazy/smartseason-field-monitoring/issues)
-- **Email:** mulongoelphas97@example.com
+- **Email:** mulongoelphas97@gmail.com
 - **LinkedIn:** https://www.linkedin.com/in/elphas-wanyonyi
 
 🙏 Acknowledgments
