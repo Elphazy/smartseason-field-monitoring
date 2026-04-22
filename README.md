@@ -173,7 +173,6 @@ JWT_EXPIRE=7d
 
 CORS_ORIGIN=http://localhost:3000
 ```
-```
 Running the Application
 
 Backend
