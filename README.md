@@ -172,29 +172,22 @@ JWT_SECRET=your_secret_key
 JWT_EXPIRE=7d
 
 CORS_ORIGIN=http://localhost:3000
+```
+```
 Running the Application
 
 Backend
-
-```bash
 cd backend
 npm run dev
 # Server runs on http://localhost:5000
-```
-
 Verify Installation
-
-```bash
 curl http://localhost:5000/api/health
 # Expected: {"message":"Backend is running"}
-```
-
 API Documentation
 
 Complete API documentation is available in docs/API.md
 
 Key Endpoints
-
 Method Endpoint Description
 POST /api/auth/register Register new user
 POST /api/auth/login User login
@@ -205,19 +198,44 @@ PUT /api/fields/:id Update field
 DELETE /api/fields/:id Delete field
 POST /api/fields/:id/stages Update field stage
 GET /api/dashboard/summary Dashboard summary
-
 Database Schema
 
-Detailed schema documentation is in docs/DATABASE.md
+Detailed schema documentation is available in docs/DATABASE.md
 
 Main Tables
-
-· users - User accounts and authentication
+users - User accounts and authentication
 · fields - Agricultural fields and metadata
 · field_updates - Activity logs and observations
 · field_stages - Lifecycle stage tracking
+## Running the Application
 
+### Backend
+cd backend
+npm run dev
+Server runs on http://localhost:5000
 
+### Verify Installation
+curl http://localhost:5000/api/health
+
+## API Documentation
+
+Complete API documentation is in [docs/API.md](docs/API.md)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/auth/register | Register new user |
+| POST | /api/auth/login | User login |
+| GET | /api/fields | Get all fields |
+| POST | /api/fields | Create new field |
+
+## Database Schema
+
+Detailed schema documentation is in [docs/DATABASE.md](docs/DATABASE.md)
+
+- **users** - User accounts
+- **fields** - Agricultural fields
+- **field_updates** - Activity logs
+- **field_stages** - Lifecycle tracking
 ## Status Logic Explanation
 
 Fields have a computed status based on their current stage and update activity:
@@ -273,32 +291,3 @@ This project is licensed under the MIT License - see [LICENSE.txt](LICENSE.txt)
 
 **Version:** 1.0.0 | **Status:** Active | **Last Updated:** April 2026
 
-## Running the Application
-
-### Backend
-cd backend
-npm run dev
-Server runs on http://localhost:5000
-
-### Verify Installation
-curl http://localhost:5000/api/health
-
-## API Documentation
-
-Complete API documentation is in [docs/API.md](docs/API.md)
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | /api/auth/register | Register new user |
-| POST | /api/auth/login | User login |
-| GET | /api/fields | Get all fields |
-| POST | /api/fields | Create new field |
-
-## Database Schema
-
-Detailed schema documentation is in [docs/DATABASE.md](docs/DATABASE.md)
-
-- **users** - User accounts
-- **fields** - Agricultural fields
-- **field_updates** - Activity logs
-- **field_stages** - Lifecycle tracking
