@@ -173,15 +173,16 @@ JWT_EXPIRE=7d
 
 CORS_ORIGIN=http://localhost:3000
 ```
-Running the Application
+## Running the Application
 
-Backend
+### Backend
 cd backend
 npm run dev
-# Server runs on http://localhost:5000
-Verify Installation
+Server runs on http://localhost:5000
+
+### Verify Installation
 curl http://localhost:5000/api/health
-# Expected: {"message":"Backend is running"}
+
 API Documentation
 
 Complete API documentation is available in docs/API.md
@@ -206,26 +207,8 @@ users - User accounts and authentication
 · fields - Agricultural fields and metadata
 · field_updates - Activity logs and observations
 · field_stages - Lifecycle stage tracking
-## Running the Application
 
-### Backend
-cd backend
-npm run dev
-Server runs on http://localhost:5000
 
-### Verify Installation
-curl http://localhost:5000/api/health
-
-## API Documentation
-
-Complete API documentation is in [docs/API.md](docs/API.md)
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | /api/auth/register | Register new user |
-| POST | /api/auth/login | User login |
-| GET | /api/fields | Get all fields |
-| POST | /api/fields | Create new field |
 
 ## Database Schema
 
