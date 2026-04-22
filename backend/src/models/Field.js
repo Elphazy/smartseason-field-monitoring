@@ -22,6 +22,10 @@ const Field = sequelize.define('Field', {
   crop_type: {
     type: DataTypes.STRING(50),
   },
+  planting_date: {
+    type: DataTypes.DATE,
+    allowNull: false,
+  },
   latitude: {
     type: DataTypes.FLOAT,
   },
@@ -29,12 +33,17 @@ const Field = sequelize.define('Field', {
     type: DataTypes.FLOAT,
   },
   status: {
-    type: DataTypes.ENUM('active', 'fallow', 'inactive', 'alert'),
+    type: DataTypes.ENUM('active', 'at_risk', 'completed'),
     defaultValue: 'active',
   },
   user_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
+  },
+  assigned_to: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    comment: 'Field Agent ID assigned by Admin',
   },
 }, {
   tableName: 'fields',

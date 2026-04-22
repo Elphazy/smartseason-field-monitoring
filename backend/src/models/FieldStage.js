@@ -12,7 +12,7 @@ const FieldStage = sequelize.define('FieldStage', {
     allowNull: false,
   },
   stage: {
-    type: DataTypes.ENUM('planting', 'growing', 'harvesting', 'fallow'),
+    type: DataTypes.ENUM('planted', 'growing', 'ready', 'harvested'),
     allowNull: false,
   },
   start_date: {
