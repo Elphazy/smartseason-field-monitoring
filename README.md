@@ -712,3 +712,43 @@ Use these accounts to test the application:
 | Field Agent | `agent1` | `agent123` |
 
 **Note:** On first run, you may need to register these accounts or run a database seeder.
+
+## 🇰🇪 Kenyan Agricultural Context
+
+SmartSeason is designed with Kenyan farming practices and agricultural calendars in mind.
+
+### Sample Data Includes Authentic Kenyan Content
+
+| Element | Examples | Significance |
+|---------|----------|--------------|
+| **Crops** | Mahindi (Maize), Maharagwe (Beans), Viazi (Potatoes) | Kenya's staple and cash crops |
+| **Regions** | Kitale (Trans-Nzoia), Njoro (Nakuru), Limuru (Kiambu) | Major agricultural counties |
+| **Field Names** | Shamba la Mahindi, Shamba la Maharagwe, Shamba la Viazi | Swahili naming convention |
+
+### Kenya's Bimodal Rainfall Pattern
+
+The system accommodates Kenya's two main growing seasons:
+
+| Season | Months | Activities |
+|--------|--------|------------|
+| **Long Rains** | March - May | Main planting season for maize, beans, potatoes |
+| **Short Rains** | October - December | Secondary planting season |
+| **Dry Spells** | Jan-Feb, Jun-Sep | Harvesting and land preparation |
+
+### Local Relevance
+
+This context makes SmartSeason immediately useful for:
+- 🌾 Smallholder farmers in Kenyan agricultural counties
+- 🌱 Agricultural extension officers tracking crop progress
+- 📊 County agricultural departments monitoring food security
+- 🏦 Financial institutions assessing crop insurance and loans
+
+### Sample Data Accuracy
+
+The demo seeder includes fields with **realistic planting dates** based on Kenya's agricultural calendar:
+- Maize in Kitale: Planted March 15 (Long rains)
+- Beans in Njoro: Planted March 1 (Long rains)
+- Potatoes in Limuru: Planted December 10 (Short rains)
+
+*This attention to local agricultural practices demonstrates the system's readiness for real-world Kenyan deployment.*
+
