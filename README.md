@@ -23,7 +23,7 @@ A comprehensive full-stack field monitoring system designed for agricultural fie
 - [Contributing](#contributing)
 - [License](#license)
 
-## 🎯 Overview
+## Overview
 
 SmartSeason is a full-stack web application that helps farmers and agricultural managers:
 - Monitor multiple fields in real-time
@@ -34,7 +34,7 @@ SmartSeason is a full-stack web application that helps farmers and agricultural 
 
 **Assessment Type:** Full Stack Developer Technical Assessment (Internship)
 
-## ✨ Features
+## Features
 
 ### Core Features
 
@@ -80,7 +80,7 @@ SmartSeason is a full-stack web application that helps farmers and agricultural 
 - Quick field access
 - Analytics and insights
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Backend
 - **Runtime:** Node.js (v14+)
@@ -106,7 +106,7 @@ SmartSeason is a full-stack web application that helps farmers and agricultural 
 - **Migrations:** Sequelize migrations
 - **Seed Data:** Database seeders
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -154,7 +154,7 @@ A comprehensive full-stack field monitoring system designed for agricultural fie
 - [Contributing](#contributing)
 - [License](#license)
 
-## 🎯 Overview
+## Overview
 
 SmartSeason is a full-stack web application that helps farmers and agricultural managers:
 - Monitor multiple fields in real-time
@@ -165,7 +165,7 @@ SmartSeason is a full-stack web application that helps farmers and agricultural 
 
 **Assessment Type:** Full Stack Developer Technical Assessment (Internship)
 
-## ✨ Features
+## Features
 
 ### Core Features
 
@@ -211,7 +211,7 @@ SmartSeason is a full-stack web application that helps farmers and agricultural 
 - Quick field access
 - Analytics and insights
 
-## 🛠 Tech Stack
+## Tech Stack
 
 ### Backend
 - **Runtime:** Node.js (v14+)
@@ -244,14 +244,14 @@ SmartSeason is a full-stack web application that helps farmers and agricultural 
 - **Deployment:** Heroku / AWS / DigitalOcean
 - **Package Manager:** npm / yarn
 
-## 📁 Project Structure
+## Project Structure
 
 smartseason-field-monitoring/ │ ├── backend/ # Express.js REST API │ ├── src/ │ │ ├── config/ # Configuration files │ │ │ ├── database.js # Database connection │ │ │ └── environment.js # Environment variables │ │ ├── models/ # Sequelize models │ │ │ ├── User.js # User model │ │ │ ├── Field.js # Field model │ │ │ ├── FieldUpdate.js # Field update model │ │ │ └── FieldStage.js # Field stage model │ │ ├── routes/ # API routes │ │ │ ├── auth.js # Authentication routes │ │ │ ├── fields.js # Field management routes │ │ │ ├── updates.js # Field update routes │ │ │ ├── stages.js # Field stage routes │ │ │ └── dashboard.js #
 Dashboard routes │ │ ├── controllers/ # Route controllers │ │ │ ├── authController.js # Auth logic │ │ │ ├── fieldController.js # Field logic │ │ │ ├── updateController.js # Update logic │ │ │ ├── stageController.js # Stage logic │ │ │ └── dashboardController.js # Dashboard logic │ │ ├── middleware/ # Custom middleware │ │ │ ├── auth.js # Authentication middleware │ │ │ ├── errorHandler.js # Error handling │ │ │ └── validation.js # Input validation │ │ ├──utils/ # Utility functions │ │ │ ├── tokenGenerator.js # JWT token generation │ │ │ ├── statusLogic.js # Field status determination │ │ │ └── errorMessages.js # Standard error messages │ │ └── index.js # Express app entry point │ ├── tests/ # Test files │ ├── migrations/ # Database migrations │ ├── seeders/ # Database seeders │ ├── .env.example # Environment variables template │ ├── .gitignore │ ├── package.json │ └── README.md │ ├── frontend/ # React application │ ├── public/ │ │ ├── index.html │ │ └── favicon.ico │ ├── src/ │ │ ├── components/ # Reusable components │ │ │ ├── Navbar.js │ │ │ ├── FieldCard.js │ │ │ ├── FieldForm.js │ │ │ ├── UpdateForm.js │ │ │ └── DashboardCard.js │ │ ├── pages/ #Page components │ │ │ ├── LoginPage.js │ │ │ ├── SignupPage.js │ │ │ ├── DashboardPage.js │ │ │ ├── FieldsPage.js │ │ │ ├── FieldDetailPage.js │ │ │ └── NotFoundPage.js │ │ ├── services/ # API services │ │ │ ├── authService.js │ │ │ ├── fieldService.js │ │ │ ├── updateService.js │ │ │ └── dashboardService.js │ │ ├── styles/ # CSS files │ │ │ ├── App.css │ │ │ ├── components.css │ │ │ └── pages.css │ │ ├── utils/ # Utility functions │ │ │ ├── api.js # Axios instance │ │ │ └──
 constants.js # App constants │ │ ├── App.js # Main App component │ │ ├── index.js # React entry point │ │ └── index.css │ ├── .env.example │ ├── .gitignore │ ├── package.json │ └── README.md │ ├── database/ # Database schemas and docs │ ├── schemas/ │ │ └── smartseason_schema.sql # Complete schema │ ├── migrations/ # Migration files │ └── README.md │ ├── docs/ # Project documentation │ ├── API.md # API endpoint documentation │ ├── DATABASE.md # Database schema details │ ├── SETUP.md # Development setup guide │ ├── ARCHITECTURE.md # System architecture │ └── TESTING.md # Testing guide │ ├── .gitignore # Git ignore rules ├── README.md # This file └── package.json # Root package.json (optional)
 
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -470,7 +470,7 @@ Coding Standards
 - [ ] CSV/PDF export functionality
 - [ ] Multi-language support
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
