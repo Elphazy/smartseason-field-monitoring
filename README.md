@@ -150,7 +150,6 @@ npm run dev
 
 ---
 
-## 📝 **Part 5: Configuration, API, Database**
 
 ```bash
 cat >> README.md << 'EOF'
@@ -273,3 +272,33 @@ This project is licensed under the MIT License - see [LICENSE.txt](LICENSE.txt)
 ---
 
 **Version:** 1.0.0 | **Status:** Active | **Last Updated:** April 2026
+
+## Running the Application
+
+### Backend
+cd backend
+npm run dev
+Server runs on http://localhost:5000
+
+### Verify Installation
+curl http://localhost:5000/api/health
+
+## API Documentation
+
+Complete API documentation is in [docs/API.md](docs/API.md)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | /api/auth/register | Register new user |
+| POST | /api/auth/login | User login |
+| GET | /api/fields | Get all fields |
+| POST | /api/fields | Create new field |
+
+## Database Schema
+
+Detailed schema documentation is in [docs/DATABASE.md](docs/DATABASE.md)
+
+- **users** - User accounts
+- **fields** - Agricultural fields
+- **field_updates** - Activity logs
+- **field_stages** - Lifecycle tracking
