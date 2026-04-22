@@ -669,3 +669,46 @@ Thumbs.db
 uploads/
 temp/
 tmp/
+
+## 📊 Status Logic Explanation
+
+Fields have a computed status based on their current stage and last update activity.
+
+### Status Determination Rules
+
+| Status | Condition | Rationale |
+|--------|-----------|-----------|
+| **Active** | Current stage is 'planted' or 'growing', AND last update was within 7 days | Field is in progress and being actively monitored |
+| **At Risk** | No updates in 7+ days, OR stage is 'ready' for 14+ days without harvest | Field may be neglected or harvest is delayed |
+| **Completed** | Current stage is 'harvested' | Field has completed its lifecycle |
+
+### Implementation Approach
+
+The status is **computed dynamically** rather than stored directly. This ensures:
+- Status always reflects current data
+- No need to manually update status when stages change
+- Consistent logic across all views
+
+**Calculation Method:**
+```javascript
+// Pseudo-code for status determination
+function calculateFieldStatus(field) {
+  const daysSinceUpdate = (Date.now() - field.lastUpdate) / (1000 * 60 * 60 * 24);
+  
+  if (field.currentStage === 'harvested') return 'completed';
+  if (daysSinceUpdate > 7) return 'at_risk';
+  if (field.currentStage === 'ready' && daysSinceReady > 14) return 'at_risk';
+  return 'active';
+}
+
+
+## 🔑 Demo Credentials
+
+Use these accounts to test the application:
+
+| Role | Username | Password |
+|------|----------|----------|
+| Admin (Coordinator) | `admin` | `admin123` |
+| Field Agent | `agent1` | `agent123` |
+
+**Note:** On first run, you may need to register these accounts or run a database seeder.
