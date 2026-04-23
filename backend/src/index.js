@@ -7,7 +7,7 @@ const authRoutes = require('./routes/auth');
 const fieldRoutes = require('./routes/fields');
 const dashboardRoutes = require('./routes/dashboard');
 const errorHandler = require('./middleware/errorHandler');
-const seedDatabase = require('./seeders/seed');
+const { User } = require('./models');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -26,26 +26,37 @@ app.get('/api/health', (req, res) => {
 
 app.use(errorHandler);
 
+const seedIfNeeded = async () => {
+  try {
+    const admin = await User.findOne({ where: { username: 'admin' } });
+    if (!admin) {
+      console.log('🌱 Seeding demo accounts…');
+      // Import the seeder and run it
+      const seedDatabase = require('./seeders/seed');
+      await seedDatabase();
+      console.log('✅ Demo accounts ready');
+    } else {
+      console.log('ℹ️ Demo accounts already exist');
+    }
+  } catch (err) {
+    console.error('❌ Seeding error:', err.message);
+  }
+};
+
 const startServer = async () => {
   try {
     await sequelize.authenticate();
     console.log('✅ Database connected successfully');
-    
-    // Sync database - creates tables if they don't exist
+
+    // Sync models (creates tables if they don't exist)
     await sequelize.sync({ alter: true });
     console.log('✅ Database tables synchronized');
-    
-    // Run seeder (only in development)
-    if (process.env.NODE_ENV === 'development') {
-      await seedDatabase();
-    }
-    
+
+    // Auto‑seed demo accounts if they don't exist
+    await seedIfNeeded();
+
     app.listen(PORT, () => {
       console.log(`🚀 Server running on port ${PORT}`);
-      console.log(`📡 API available at http://localhost:${PORT}/api`);
-      console.log(`\n📋 Demo Credentials:`);
-      console.log(`   Admin:  admin / admin123`);
-      console.log(`   Agent:  agent1 / agent123`);
     });
   } catch (err) {
     console.error('❌ Unable to start server:', err);
