@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "SmartSeason Field Monitoring API",
   "main": "src/index.js",
-  "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "seed": "node src/seeders/runSeed.js",
-    "test": "jest"
-  },
+"scripts": {
+  "start": "node src/index.js",
+  "dev": "nodemon src/index.js",
+  "seed": "node src/seeders/runSeed.js",
+  "test": "jest",
+  "postdeploy": "npm run seed"
+},
   "dependencies": {
     "express": "^4.18.2",
     "pg": "^8.11.0",
