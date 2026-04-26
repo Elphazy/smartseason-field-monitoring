@@ -23,7 +23,9 @@ app.use('/api/dashboard', dashboardRoutes);
 app.get('/api/health', (req, res) => {
   res.json({ message: 'Backend is running', timestamp: new Date() });
 });
-
+app.get('/testfresh', (req, res) => {
+  res.json({ fresh: true, commit: 'latest' });
+});
 app.use(errorHandler);
 
 const seedIfNeeded = async () => {
