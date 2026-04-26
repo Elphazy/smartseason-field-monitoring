@@ -20,12 +20,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/fields', fieldRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
-app.get('/api/health', (req, res) => {
-  res.json({ message: 'Backend is running', timestamp: new Date() });
-});
-app.get('/testfresh', (req, res) => {
-  res.json({ fresh: true, commit: 'latest' });
-});
+app.use('/api/health', require('./routes/health'));
+  
 app.use(errorHandler);
 
 const seedIfNeeded = async () => {
