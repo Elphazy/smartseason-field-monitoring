@@ -120,6 +120,14 @@ smartseason-field-monitoring/
 
 ## Installation
 
+## Live Deployment
+
+The backend is live at:
+[https://smartseason-api-v2.onrender.com](https://smartseason-api-v2.onrender.com)
+
+> **Note:** This is hosted on a free Render instance, which may experience a cold start delay of up to 50 seconds for the first request.
+
+
 ### Prerequisites
 - Node.js (v14.0.0 or higher)
 - PostgreSQL (v12 or higher)
@@ -174,6 +182,8 @@ JWT_EXPIRE=7d
 CORS_ORIGIN=http://localhost:3000
 ```
 ## Running the Application
+The application is configured for deployment on Render with a PostgreSQL database. Environment variables such as `DATABASE_URL`, `JWT_SECRET`, and `NODE_ENV` are set directly in the Render dashboard.
+
 
 ### Backend
 cd backend
@@ -232,6 +242,8 @@ Fields have a computed status based on their current stage and update activity:
 
 
 ## Demo Credentials
+These accounts are seeded automatically when the application starts.
+
 
 Use these accounts to test the application:
 
